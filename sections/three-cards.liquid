@@ -1,0 +1,52 @@
+<div class="three-cards">
+  <div class="cards-wrapper">
+    {% for block in section.blocks limit: 3 %}
+      <div class="card">
+        {% if block.settings.image != blank %}
+          <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.title }}">
+        {% endif %}
+        <h2>{{ block.settings.title }}</h2>
+        <p>{{ block.settings.text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Three Cards",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Заголовок"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Описание карточки."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Three Cards Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

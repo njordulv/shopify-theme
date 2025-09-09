@@ -1,0 +1,45 @@
+{{ 'highlights.css' | asset_url | stylesheet_tag }}
+
+<div class="highlights">
+{% for block in section.blocks limit: 3 %}
+  <div class="highlight">
+  <h3>{{ block.settings.title }}</h3>
+  <p class="highlight-description">{{ block.settings.description }}</p>
+  </div>
+{% endfor %} 
+</div>
+
+
+{% schema %}
+{
+  "name": "Hightlights",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Description"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Hightlights Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
