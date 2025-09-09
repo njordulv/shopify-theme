@@ -1,0 +1,26 @@
+.hero {
+  display: grid;
+  grid-template-columns: var(--content-grid);
+  background-color: bisque;
+  padding: 72px 0;
+}
+
+.hero-content {
+  grid-column: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.hero-description {
+  max-width: 80ch;
+  line-height: 1.4;
+  margin-top: 1.5rem;
+}
+
+.icon {
+  width: 300px;
+}

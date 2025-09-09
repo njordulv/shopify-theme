@@ -5,6 +5,9 @@
   <div class="highlight">
   <h3>{{ block.settings.title }}</h3>
   <p class="highlight-description">{{ block.settings.description }}</p>
+  <a href="{{ block.settings.link }}" class="highlight-link">
+    {{ block.settings.link_title }}
+  </a>
   </div>
 {% endfor %} 
 </div>
@@ -16,20 +19,31 @@
   "settings": [],
   "blocks": [
     {
-      "type": "card",
-      "name": "Card",
-      "settings": [
+        "type": "card",
+        "name": "Card",
+        "settings": [
         {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Title"
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Title"
         },
         {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description",
-          "default": "Description"
+            "type": "textarea",
+            "id": "description",
+            "label": "Description",
+            "default": "Description"
+        },
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Link",
+        },
+        {
+            "type": "text",
+          "id": "link_title",
+          "label": "Link Title",
+          "default": "Read more"
         }
       ]
     }
@@ -37,8 +51,8 @@
   "max_blocks": 3,
   "presets": [
     {
-      "name": "Hightlights Section",
-      "category": "Custom"
+        "name": "Hightlights Section",
+        "category": "Custom"
     }
   ]
 }

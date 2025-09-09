@@ -1,0 +1,47 @@
+{{ 'hero.css' | asset_url | stylesheet_tag }}
+
+<div class="hero full-width">
+  <div class="hero-content">
+    <div>
+      <h1>{{ section.settings.title }}</h1>
+      <p class="hero-description">
+        {{ section.settings.description_1 }}
+      </p>
+      <p class="hero-description">
+        {{ section.settings.description_2 }}
+      </p>
+    </div>
+    <div class="icon">
+      <img src="{{ 'shopify-logo.svg' | asset_url }}" width="400" height="400">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description_1",
+          "label": "First description"
+        },
+        {
+          "type": "textarea",
+          "id": "description_2",
+          "label": "Second description"
+        }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
