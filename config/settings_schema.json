@@ -17,7 +17,7 @@
       {
         "type": "font_picker",
         "id": "type_primary_font",
-        "default": "work_sans_n4",
+        "default": "geist_mono_n4",
         "label": "t:general.primary"
       }
     ]
@@ -67,6 +67,144 @@
         "id": "foreground_color",
         "default": "#333333",
         "label": "t:labels.foreground"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "default": "#644a40",
+        "label": "t:labels.primary"
+      },
+      {
+        "type": "color",
+        "id": "primary_foreground",
+        "default": "#ffffff",
+        "label": "t:labels.primary_foreground"
+      },
+      {
+        "type": "color",
+        "id": "secondary_color",
+        "default": "#ffdfb5",
+        "label": "t:labels.secondary"
+      },
+      {
+        "type": "color",
+        "id": "secondary_foreground",
+        "default": "#582d1d",
+        "label": "t:labels.secondary_foreground"
+      },
+      {
+        "type": "color",
+        "id": "card_color",
+        "default": "#fcfcfc",
+        "label": "t:labels.card"
+      },
+      {
+        "type": "color",
+        "id": "card_foreground",
+        "default": "#202020",
+        "label": "t:labels.card_foreground"
+      },
+      {
+        "type": "color",
+        "id": "popover_color",
+        "default": "#fcfcfc",
+        "label": "t:labels.popover"
+      },
+      {
+        "type": "color",
+        "id": "popover_foreground",
+        "default": "#202020",
+        "label": "t:labels.popover_foreground"
+      },
+      {
+        "type": "color",
+        "id": "muted_color",
+        "default": "#efefef",
+        "label": "t:labels.muted"
+      },
+      {
+        "type": "color",
+        "id": "muted_foreground",
+        "default": "#646464",
+        "label": "t:labels.muted_foreground"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "default": "#e8e8e8",
+        "label": "t:labels.accent"
+      },
+      {
+        "type": "color",
+        "id": "accent_foreground",
+        "default": "#202020",
+        "label": "t:labels.accent_foreground"
+      },
+      {
+        "type": "color",
+        "id": "destructive_color",
+        "default": "#e54d2e",
+        "label": "t:labels.destructive"
+      },
+      {
+        "type": "color",
+        "id": "destructive_foreground",
+        "default": "#ffffff",
+        "label": "t:labels.destructive_foreground"
+      },
+      {
+        "type": "color",
+        "id": "border_color",
+        "default": "#d8d8d8",
+        "label": "t:labels.border"
+      },
+      {
+        "type": "color",
+        "id": "input_color",
+        "default": "#d8d8d8",
+        "label": "t:labels.input"
+      },
+      {
+        "type": "color",
+        "id": "ring_color",
+        "default": "#644a40",
+        "label": "t:labels.ring"
+      },
+      {
+        "type": "color",
+        "id": "chart_1_color",
+        "default": "#644a40",
+        "label": "t:labels.chart_1"
+      },
+      {
+        "type": "color",
+        "id": "chart_2_color",
+        "default": "#ffdfb5",
+        "label": "t:labels.chart_2"
+      },
+      {
+        "type": "color",
+        "id": "chart_3_color",
+        "default": "#e8e8e8",
+        "label": "t:labels.chart_3"
+      },
+      {
+        "type": "color",
+        "id": "chart_4_color",
+        "default": "#ffe6c4",
+        "label": "t:labels.chart_4"
+      },
+      {
+        "type": "color",
+        "id": "chart_5_color",
+        "default": "#66493e",
+        "label": "t:labels.chart_5"
+      },
+      {
+        "type": "color",
+        "id": "sidebar_color",
+        "default": "#fbfbfb",
+        "label": "t:labels.sidebar"
       },
       {
         "type": "range",

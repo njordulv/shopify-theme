@@ -1,7 +1,7 @@
 .hero {
   display: grid;
   grid-template-columns: var(--content-grid);
-  background-color: bisque;
+  background-color: #e8e8e8;
   padding: 72px 0;
 }
 
@@ -12,7 +12,7 @@
   align-items: center;
   gap: 1rem;
   width: 100%;
-  padding: 0 24px;
+  padding: 0;
 }
 
 .hero-description {
