@@ -105,6 +105,7 @@ main {
   position: relative;
   display: flex;
   flex: 1 0 0;
+  padding-bottom: 2rem;
 }
 
 .wrapper {
