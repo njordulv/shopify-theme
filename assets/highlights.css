@@ -32,18 +32,3 @@
 .highlight-description {
   flex: 1 1;
 }
-
-.highlight a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  background-color: var(--color-primary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--style-border-radius-inputs);
-  color: var(--color-primary-foreground);
-  padding: 0 12px;
-  min-height: 32px;
-  text-decoration: none;
-  font-size: 0.875rem;
-}
