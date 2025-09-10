@@ -3,10 +3,10 @@
 
 <div class="highlights">
 {% for block in section.blocks limit: 3 %}
-  <div class="highlight">
+  <div class="highlight rounded-xl">
   <h3>{{ block.settings.title }}</h3>
   <p class="highlight-description">{{ block.settings.description }}</p>
-  <a href="{{ block.settings.link }}" class="btn btn--primary">
+  <a href="{{ block.settings.link }}" class="btn btn--primary rounded-md">
     {{ block.settings.link_title }}
   </a>
   </div>

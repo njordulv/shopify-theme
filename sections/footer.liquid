@@ -1,4 +1,4 @@
-<footer>
+<div class="footer__wrapper">
   <div class="footer__copyright">
     &copy;
     {{ 'now' | date: '%Y' }}
@@ -18,20 +18,25 @@
       {% endfor %}
     {% endif %}
   </div>
-</footer>
+</div>
+
 
 {% stylesheet %}
-  footer {
+footer {
+  margin-top: 2rem;
+}
+  .footer__wrapper {
+    height: 4rem;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin-top: 2rem;
   }
-  footer a {
+  .footer__wrapper a {
     text-decoration: none;
     color: var(--color-foreground);
   }
-  footer .footer__links,
-  footer .footer__payment {
+  .footer__wrapper .footer__links,
+  .footer__wrapper .footer__payment {
     display: flex;
     gap: 1rem;
   }

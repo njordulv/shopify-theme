@@ -24,3 +24,9 @@
 .icon {
   width: 300px;
 }
+
+@media (max-width: 991px) {
+  .hero {
+    padding: 48px 0;
+  }
+}

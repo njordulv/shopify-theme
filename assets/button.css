@@ -4,7 +4,7 @@
   justify-content: center;
   width: fit-content;
   border: 1px solid var(--color-border);
-  border-radius: var(--style-border-radius-inputs);
+  border-radius: var(--radius);
   padding: 0 12px;
   min-height: 32px;
   text-decoration: none;

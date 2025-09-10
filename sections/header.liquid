@@ -1,4 +1,4 @@
-<header>
+<div class="header__wrapper">
   <h2 class="header__title">
     {{ shop.name | link_to: routes.root_url }}
   </h2>
@@ -22,21 +22,21 @@
       {{ 'icon-cart.svg' | inline_asset_content }}
     </a>
   </div>
-</header>
+</div>
 
 {% stylesheet %}
-  header {
-    height: 5rem;
+  .header__wrapper {
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  header a {
+  .header__wrapper a {
     position: relative;
     text-decoration: none;
     color: var(--color-secondary-foreground);
   }
-  header a:hover {
+  .header__wrapper a:hover {
     color: var(--color-primary);
   }
   header a sup {

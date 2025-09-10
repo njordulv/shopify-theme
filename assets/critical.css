@@ -33,7 +33,7 @@ input,
 textarea,
 select {
   font: inherit;
-  border-radius: var(--style-border-radius-inputs);
+  border-radius: var(--radius);
 }
 
 select {
@@ -99,4 +99,33 @@ body {
 
 .shopify-section > .full-width {
   grid-column: 1 / -1;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1 0 0;
+}
+
+.rounded-md {
+  border-radius: calc(var(--radius) - 4px);
+}
+
+.rounded-md {
+  border-radius: calc(var(--radius) - 2px);
+}
+
+.rounded-lg {
+  border-radius: var(--radius);
+}
+
+.rounded-xl {
+  border-radius: calc(var(--radius) + 4px);
 }

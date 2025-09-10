@@ -50,6 +50,16 @@
         "unit": "px",
         "label": "t:labels.page_margin",
         "default": 20
+      },
+      {
+        "type": "range",
+        "id": "radius",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "unit": "rem",
+        "label": "t:labels.radius",
+        "default": 0.3
       }
     ]
   },
@@ -205,16 +215,6 @@
         "id": "sidebar_color",
         "default": "#fbfbfb",
         "label": "t:labels.sidebar"
-      },
-      {
-        "type": "range",
-        "id": "input_corner_radius",
-        "min": 0,
-        "max": 10,
-        "step": 1,
-        "unit": "px",
-        "label": "t:labels.input_corner_radius",
-        "default": 4
       }
     ]
   }
