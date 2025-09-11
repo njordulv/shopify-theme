@@ -1,0 +1,9 @@
+{% if href %}
+    <a href="{{ href }}" class="btn btn--{{ variant | default: 'primary' }}">
+        {{ label }}
+    </a>
+{% else %}
+    <button type="button" onclick="window.location.href = '{{ link }}'" class="btn btn--{{ variant | default: 'primary' }}">
+        {{ label }}
+    </button>
+{% endif %}

@@ -6,9 +6,7 @@
   <div class="highlight">
   <h3>{{ block.settings.title }}</h3>
   <p class="highlight-description">{{ block.settings.description }}</p>
-  <a href="{{ block.settings.link }}" class="btn btn--primary">
-    {{ block.settings.link_title }}
-  </a>
+  {% render 'button', href: block.settings.link, variant: 'primary', label: block.settings.link_title %}
   </div>
 {% endfor %} 
 </div>
@@ -42,9 +40,9 @@
         },
         {
             "type": "text",
-          "id": "link_title",
-          "label": "Link Title",
-          "default": "Read more"
+            "id": "link_title",
+            "label": "Link Title",
+            "default": "Read more"
         }
       ]
     }

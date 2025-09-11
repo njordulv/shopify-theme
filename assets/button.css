@@ -9,6 +9,7 @@
   min-height: 32px;
   text-decoration: none;
   font-size: 0.75rem;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
