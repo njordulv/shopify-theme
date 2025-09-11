@@ -1,14 +1,13 @@
 {{ 'highlights.css' | asset_url | stylesheet_tag }}
-{{ 'button.css' | asset_url | stylesheet_tag }}
 
 <div class="highlights">
-{% for block in section.blocks limit: 3 %}
-  <div class="highlight">
-  <h3>{{ block.settings.title }}</h3>
-  <p class="highlight-description">{{ block.settings.description }}</p>
-  {% render 'button', href: block.settings.link, variant: 'primary', label: block.settings.link_title %}
-  </div>
-{% endfor %} 
+  {% for block in section.blocks limit: 3 %}
+    {% render 'card', 
+      title: block.settings.title, 
+      description: block.settings.description, 
+      link: block.settings.link, 
+      label: block.settings.link_title %}
+  {% endfor %} 
 </div>
 
 

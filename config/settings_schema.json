@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Njordr-theme",
-    "theme_version": "0.1.0",
+    "theme_version": "0.1.1",
     "theme_author": "Shopify",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
@@ -31,7 +31,7 @@
         "label": "t:labels.page_width",
         "options": [
           {
-            "value": "90rem",
+            "value": "82rem",
             "label": "t:options.page_width.narrow"
           },
           {
@@ -39,7 +39,7 @@
             "label": "t:options.page_width.wide"
           }
         ],
-        "default": "90rem"
+        "default": "82rem"
       },
       {
         "type": "range",
@@ -69,13 +69,13 @@
       {
         "type": "color",
         "id": "background_color",
-        "default": "#FFFFFF",
+        "default": "#F9F9F9",
         "label": "t:labels.background"
       },
       {
         "type": "color",
         "id": "foreground_color",
-        "default": "#333333",
+        "default": "#202020",
         "label": "t:labels.foreground"
       },
       {

@@ -1,3 +1,10 @@
 {
-  "current": {}
+  "current": {
+    "max_page_width": "82rem",
+    "min_page_margin": 20,
+    "radius": 0.3,
+    "background_color": "#F9F9F9",
+    "foreground_color": "#202020",
+    "primary_color": "#644a40"
+  }
 }

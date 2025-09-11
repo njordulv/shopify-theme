@@ -10,7 +10,7 @@
   }
 }
 
-.highlight {
+.card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -23,11 +23,11 @@
   line-height: 1.4;
 }
 
-.highlight h3 {
+.card--title {
   font-size: 1.125rem;
   color: var(--color-card-foreground);
 }
 
-.highlight-description {
+.card--description {
   flex: 1 1;
 }
