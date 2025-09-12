@@ -1,10 +1,68 @@
 {
   "current": {
+    "type_primary_font": "geist_mono_n4",
     "max_page_width": "82rem",
     "min_page_margin": 20,
     "radius": 0.3,
     "background_color": "#F9F9F9",
     "foreground_color": "#202020",
-    "primary_color": "#644a40"
+    "primary_color": "#644a40",
+    "primary_foreground": "#ffffff",
+    "secondary_color": "#ffdfb5",
+    "secondary_foreground": "#582d1d",
+    "card_color": "#fcfcfc",
+    "card_foreground": "#202020",
+    "popover_color": "#fcfcfc",
+    "popover_foreground": "#202020",
+    "muted_color": "#efefef",
+    "muted_foreground": "#646464",
+    "accent_color": "#e8e8e8",
+    "accent_foreground": "#202020",
+    "destructive_color": "#e54d2e",
+    "destructive_foreground": "#ffffff",
+    "border_color": "#d8d8d8",
+    "input_color": "#d8d8d8",
+    "ring_color": "#644a40",
+    "chart_1_color": "#644a40",
+    "chart_2_color": "#ffdfb5",
+    "chart_3_color": "#e8e8e8",
+    "chart_4_color": "#ffe6c4",
+    "chart_5_color": "#66493e",
+    "sidebar_color": "#fbfbfb",
+    "sections": {
+      "hero": {
+        "type": "hero",
+        "settings": {
+          "title": "Unleash Your Style"
+        }
+      },
+      "highlights": {
+        "type": "highlights",
+        "blocks": {
+          "card_1": {
+            "type": "card",
+            "settings": {
+              "title": "Premium Quality",
+              "link": "/collections/all"
+            }
+          },
+          "card_2": {
+            "type": "card",
+            "settings": {
+              "title": "Modern Design",
+              "link": "/collections/new"
+            }
+          },
+          "card_3": {
+            "type": "card",
+            "settings": {
+              "title": "Everyday Comfort",
+              "link": "/collections/bestsellers"
+            }
+          }
+        },
+        "settings": {}
+      }
+    }
   }
 }

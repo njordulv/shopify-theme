@@ -2,8 +2,47 @@
   "sections": {
     "main": {
       "type": "hero",
+      "settings": {
+        "title": "Welcome to Your Next Favorite Store",
+        "description_1": "Discover carefully curated collections designed to inspire your lifestyle. From timeless essentials to modern must-haves, our products combine quality, style, and comfort.",
+        "description_2": "Whether you’re refreshing your wardrobe, upgrading your home, or looking for unique gifts, we make shopping effortless and enjoyable. Explore, shop, and find what speaks to you."
+      }
+    },
+    "highlights_KBick9": {
+      "type": "highlights",
+      "blocks": {
+        "card_yeCH69": {
+          "type": "card",
+          "settings": {
+            "title": "Premium Quality",
+            "description": "Crafted with the finest materials for durability and timeless appeal.",
+            "link": "/collections/all",
+            "link_title": "Shop now"
+          }
+        },
+        "card_9f3aDK": {
+          "type": "card",
+          "settings": {
+            "title": "Modern Design",
+            "description": "Blending classic aesthetics with a fresh, contemporary look.",
+            "link": "/collections/new",
+            "link_title": "View details"
+          }
+        },
+        "card_wwmwbA": {
+          "type": "card",
+          "settings": {
+            "title": "Sustainable Choices",
+            "description": "Shop eco-friendly products made with care for the planet — because style should never come at Earth’s expense.",
+            "link": "/collections/bestsellers",
+            "link_title": "Explore collection"
+          }
+        }
+      },
+      "block_order": ["card_yeCH69", "card_9f3aDK", "card_wwmwbA"],
+      "name": "Hightlights Section",
       "settings": {}
     }
   },
-  "order": ["main"]
+  "order": ["main", "highlights_KBick9"]
 }
