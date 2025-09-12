@@ -42,7 +42,16 @@
       "block_order": ["card_yeCH69", "card_9f3aDK", "card_wwmwbA"],
       "name": "Hightlights Section",
       "settings": {}
+    },
+    "featured_collection_P39NQi": {
+      "type": "featured-collection",
+      "name": "Featured Collection",
+      "settings": {
+        "title": "Featured Collection",
+        "collection": "featured",
+        "products_to_show": 4
+      }
     }
   },
-  "order": ["main", "highlights_KBick9"]
+  "order": ["main", "highlights_KBick9", "featured_collection_P39NQi"]
 }

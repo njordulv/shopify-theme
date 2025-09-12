@@ -1,0 +1,26 @@
+<div class="product-card">
+    {% if product.featured_image != blank %}
+        <a href="{{ product.url }}">
+            <img 
+                src="{{ product.featured_image | image_url: width: 256, height: 256 }}" 
+                alt="{{ product.featured_image.alt }}"
+                class="product-card__image"
+                loading="lazy"
+                width="256"
+                height="256"
+            />
+        </a>
+    {% endif %}
+    <h3 class="product-card__title">
+        {{ product.title }}
+    </h3>
+    <p class="product-card__description">
+        {{ product.description | strip_html | truncatewords: 20 }}
+    </p>
+    <div class="product-card__price">
+        {{ product.price | money }}
+    </div>
+    {% if product.url %}
+        {% render 'button', href: product.url, label: 'View all', variant: 'outline' %}
+    {% endif %}
+</div>
