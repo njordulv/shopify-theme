@@ -15,7 +15,7 @@
         {{ product.title }}
     </h3>
     <p class="product-card__description">
-        {{ product.description | strip_html | truncatewords: 20 }}
+        {{ product.description | strip_html | truncatewords: 12 }}
     </p>
     <div class="product-card__price">
         {{ product.price | money }}
