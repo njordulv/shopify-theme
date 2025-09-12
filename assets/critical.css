@@ -41,6 +41,12 @@ select {
   color: currentcolor;
 }
 
+fieldset,
+fieldset legend {
+  padding: 0;
+  border: 0;
+}
+
 dialog {
   background-color: var(--color-background);
   color: var(--color-foreground);
@@ -115,7 +121,7 @@ main {
   flex: 1 0 0;
 }
 
-.rounded-md {
+.rounded-sm {
   border-radius: calc(var(--radius) - 4px);
 }
 

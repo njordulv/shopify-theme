@@ -38,10 +38,5 @@
 }
 
 .product-card__image {
-  border-radius: var(--radius);
   object-fit: cover;
-}
-
-.product-card .btn {
-  width: auto;
 }

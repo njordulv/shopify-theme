@@ -1,0 +1,56 @@
+{{ 'product-page.css' | asset_url | stylesheet_tag }}
+
+<div class="shopify-section">
+    <div class="product full-width">
+        <div class="product__content">
+            <div class="product__inner--left">
+                <img 
+                    src="{{ product.featured_image | image_url: width: 400, height: 400  }}" 
+                    alt="{{ product.featured_image.alt }}" 
+                    class="product__image rounded-lg"
+                />
+            </div>
+            <div class="product__inner--right">
+                <h1 class="product__title">{{ product.title }}</h1>
+                <div class="product__price">
+                    {{ product.price | money }}
+                </div>
+                <p class="product__description">
+                    {{ product.description }}
+                </p>
+
+                {% unless product.has_only_default_variant %}
+                    {% for option in product.options_with_values %}
+                      <fieldset id="ProductSelect-option-{{ forloop.index0 }}">
+                        <legend>{{ option.name | escape }}</legend>
+                        {% for value in option.values %}
+                          <input type="radio"
+                                 id="option-{{ forloop.index0 }}-{{ forloop.index0 }}"
+                                 name="{{ option.name | handleize }}"
+                                 value="{{ value.value | escape }}"
+                                 {% if value.selected %}checked{% endif %}
+                                 {% unless value.available %}disabled{% endunless %}>
+                          <label for="option-{{ forloop.index0 }}-{{ forloop.index0 }}">{{ value.value }}</label>
+                        {% endfor %}
+                      </fieldset>
+                    {% endfor %}
+                  {% endunless %}
+                
+                <form 
+                    method="post" 
+                    action="/cart/add" 
+                    class="product__form"
+                >
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                    {% render 'button', 
+                        type: 'submit', 
+                        link: product.url, 
+                        label: 'Add To Bag', 
+                        variant: 'primary', 
+                        extra_class: 'w-auto' 
+                    %}
+                </form>
+            </div>
+        </div> 
+    </div> 
+</div>

@@ -4,7 +4,7 @@
             <img 
                 src="{{ product.featured_image | image_url: width: 256, height: 256 }}" 
                 alt="{{ product.featured_image.alt }}"
-                class="product-card__image"
+                class="product-card__image rounded-lg"
                 loading="lazy"
                 width="256"
                 height="256"
@@ -21,6 +21,6 @@
         {{ product.price | money }}
     </div>
     {% if product.url %}
-        {% render 'button', href: product.url, label: 'View all', variant: 'outline' %}
+        {% render 'button', href: product.url, label: 'View more', variant: 'outline', extra_class: 'w-auto' %}
     {% endif %}
 </div>

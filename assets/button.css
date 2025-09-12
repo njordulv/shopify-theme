@@ -46,3 +46,7 @@
   cursor: not-allowed;
   pointer-events: none;
 }
+
+.btn.w-auto {
+  width: auto;
+}
