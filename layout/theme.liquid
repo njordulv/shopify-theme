@@ -4,6 +4,10 @@
     {% render 'css-variables' %}
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
     {% render 'meta-tags' %}
+    {%- liquid
+      render 'vite-tag' with 'main.css'
+      render 'vite-tag' with 'main.js'
+    -%}
     {{ content_for_header }}
   </head>
   <body>
