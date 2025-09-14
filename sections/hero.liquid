@@ -1,17 +1,15 @@
-{{ 'hero.css' | asset_url | stylesheet_tag }}
-
 <div class="hero full-width">
-  <div class="hero-content">
+  <div class="hero__content">
     <div>
       <h1>{{ section.settings.title }}</h1>
-      <p class="hero-description">
+      <p class="hero__description">
         {{ section.settings.description_1 }}
       </p>
-      <p class="hero-description">
+      <p class="hero__description">
         {{ section.settings.description_2 }}
       </p>
     </div>
-    <div class="icon">
+    <div class="hero__icon">
       <img src="{{ 'shopify-logo.svg' | asset_url }}" width="400" height="400">
     </div>
   </div>
