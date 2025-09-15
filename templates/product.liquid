@@ -1,5 +1,3 @@
-{{ 'product-page.css' | asset_url | stylesheet_tag }}
-
 <div class="shopify-section">
     <div class="product full-width">
         <div class="product__content">
@@ -21,17 +19,29 @@
 
                 {% unless product.has_only_default_variant %}
                     {% for option in product.options_with_values %}
-                      <fieldset id="ProductSelect-option-{{ forloop.index0 }}">
+                      <fieldset id="ProductSelect-option-{{ forloop.index0 }}" class="product__options">
                         <legend>{{ option.name | escape }}</legend>
                         {% for value in option.values %}
-                          <input type="radio"
-                                 id="option-{{ forloop.index0 }}-{{ forloop.index0 }}"
-                                 name="{{ option.name | handleize }}"
-                                 value="{{ value.value | escape }}"
-                                 {% if value.selected %}checked{% endif %}
-                                 {% unless value.available %}disabled{% endunless %}>
-                          <label for="option-{{ forloop.index0 }}-{{ forloop.index0 }}">{{ value.value }}</label>
-                        {% endfor %}
+                            {% assign input_id = 'option-' | append: forloop.parentloop.index0 | append: '-' | append: forloop.index0 %}
+                            
+                            <input 
+                              type="radio"
+                              id="{{ input_id }}"
+                              name="{{ option.name | handleize }}"
+                              value="{{ value | escape }}"
+                              class="variant-radio sr-only"
+                              {% if value == option.selected_value %}checked{% endif %}
+                              {% unless value.available %}disabled{% endunless %}
+                            >
+                          
+                            <label 
+                              for="{{ input_id }}" 
+                              class="variant-btn btn btn--outline"
+                            >
+                              {{ value }}
+                            </label>
+                          {% endfor %}
+                          
                       </fieldset>
                     {% endfor %}
                   {% endunless %}

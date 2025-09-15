@@ -34,6 +34,15 @@
     color: var(--color-primary);
   }
 
+  &__options {
+    display: flex;
+    gap: 0.5rem;
+
+    & label {
+      text-transform: uppercase;
+    }
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
