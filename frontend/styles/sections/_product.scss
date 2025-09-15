@@ -38,6 +38,10 @@
     display: flex;
     gap: 0.5rem;
 
+    & legend {
+      padding-bottom: 0.25rem;
+    }
+
     & label {
       text-transform: uppercase;
     }

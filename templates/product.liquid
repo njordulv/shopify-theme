@@ -17,6 +17,10 @@
                     {{ product.description }}
                 </p>
 
+                <div class="bg-black text-white p-8 rounded-xl">
+                    Hello Tailwind!
+                </div>
+
                 {% unless product.has_only_default_variant %}
                     {% for option in product.options_with_values %}
                       <fieldset id="ProductSelect-option-{{ forloop.index0 }}" class="product__options">
@@ -56,7 +60,7 @@
                         type: 'submit', 
                         link: product.url, 
                         label: 'Add To Bag', 
-                        variant: 'primary', 
+                        variant: 'outline', 
                         extra_class: 'btn--w-auto' 
                     %}
                 </form>
