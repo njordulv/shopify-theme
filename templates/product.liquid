@@ -16,18 +16,12 @@
                 <p class="product__description">
                     {{ product.description }}
                 </p>
-
-                <div class="bg-black text-white p-8 rounded-xl">
-                    Hello Tailwind!
-                </div>
-
                 {% unless product.has_only_default_variant %}
                     {% for option in product.options_with_values %}
                       <fieldset id="ProductSelect-option-{{ forloop.index0 }}" class="product__options">
                         <legend>{{ option.name | escape }}</legend>
                         {% for value in option.values %}
                             {% assign input_id = 'option-' | append: forloop.parentloop.index0 | append: '-' | append: forloop.index0 %}
-                            
                             <input 
                               type="radio"
                               id="{{ input_id }}"
@@ -37,7 +31,6 @@
                               {% if value == option.selected_value %}checked{% endif %}
                               {% unless value.available %}disabled{% endunless %}
                             >
-                          
                             <label 
                               for="{{ input_id }}" 
                               class="variant-btn btn btn--outline"
@@ -45,11 +38,9 @@
                               {{ value }}
                             </label>
                           {% endfor %}
-                          
                       </fieldset>
                     {% endfor %}
                   {% endunless %}
-                
                 <form 
                     method="post" 
                     action="/cart/add" 
