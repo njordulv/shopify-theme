@@ -1,5 +1,3 @@
-{{ 'highlights.css' | asset_url | stylesheet_tag }}
-
 <div class="highlights">
   {% for block in section.blocks limit: 3 %}
     {% render 'card', 

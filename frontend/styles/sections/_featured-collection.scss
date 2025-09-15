@@ -1,0 +1,16 @@
+.featured-collection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__header {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  &__products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}

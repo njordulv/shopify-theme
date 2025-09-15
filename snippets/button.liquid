@@ -1,5 +1,3 @@
-{{ 'button.css' | asset_url | stylesheet_tag }}
-
 {% assign classes = "btn btn--" | append: variant | default: 'primary' %}
 
 {% if extra_class %}

@@ -21,6 +21,11 @@
         {{ product.price | money }}
     </div>
     {% if product.url %}
-        {% render 'button', href: product.url, label: 'View more', variant: 'outline', extra_class: 'w-auto' %}
+        {% render 'button', 
+            href: product.url, 
+            label: 'View more', 
+            variant: 'outline', 
+            extra_class: 'btn--w-auto' 
+        %}
     {% endif %}
 </div>

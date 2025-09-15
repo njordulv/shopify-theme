@@ -2,7 +2,6 @@
 <html lang="{{ request.locale.iso_code }}">
   <head>
     {% render 'css-variables' %}
-    {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
     {% render 'meta-tags' %}
     {%- liquid
       render 'vite-tag' with 'main.scss'

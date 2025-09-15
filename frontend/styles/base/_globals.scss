@@ -1,11 +1,3 @@
-/** Critical CSS for the theme. This file is included on every page. */
-
-/* Reset styles inspired by https://www.joshwcomeau.com/css/custom-css-reset/ */
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 body {
   display: flex;
   flex-direction: column;
@@ -13,27 +5,16 @@ body {
   font-size: 0.875rem;
   line-height: 1.4;
   min-height: 100svh;
+  font-family: var(--font-primary--family);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }
 
-html:has(dialog[scroll-lock][open], details[scroll-lock][open]) {
-  overflow: hidden;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-input,
-textarea,
-select {
-  font: inherit;
-  border-radius: var(--radius);
+main {
+  position: relative;
+  display: flex;
+  flex: 1 0 0;
+  padding-bottom: 2rem;
 }
 
 select {
@@ -48,39 +29,6 @@ fieldset legend {
 }
 
 dialog {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-}
-
-p {
-  text-wrap: pretty;
-}
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-p:empty {
-  display: none;
-}
-
-:is(p, h1, h2, h3, h4, h5, h6):first-child,
-:empty:first-child + :where(p, h1, h2, h3, h4, h5, h6) {
-  margin-block-start: 0;
-}
-
-:is(p, h1, h2, h3, h4, h5, h6):last-child,
-:where(p, h1, h2, h3, h4, h5, h6) + :has(+ :empty:last-child) {
-  margin-block-end: 0;
-}
-
-body {
-  font-family: var(--font-primary--family);
   background-color: var(--color-background);
   color: var(--color-foreground);
 }
@@ -105,13 +53,6 @@ body {
 
 .shopify-section > .full-width {
   grid-column: 1 / -1;
-}
-
-main {
-  position: relative;
-  display: flex;
-  flex: 1 0 0;
-  padding-bottom: 2rem;
 }
 
 .wrapper {
