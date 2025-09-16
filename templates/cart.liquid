@@ -1,0 +1,59 @@
+<div class="shopify-section">
+  <div class="product full-width">
+    <div class="product__content">
+      <div class="product__inner">
+        <h1 class="product__title">My Bag</h1>
+
+        {% if cart.item_count > 0 %}
+          <div class="cart__items">
+            {% for item in cart.items %}
+              <div class="cart__item">
+                <div class="cart__item--image">
+                  <img 
+                    src="{{ item.image | image_url: width: 100, height: 100 }}" 
+                    alt="{{ item.image.alt | escape }}" 
+                    class="rounded-lg"
+                  />
+                </div>
+                <div class="cart__item--details">
+                  <h2 class="cart__item--title">
+                    <a href="{{ item.url }}">{{ item.product.title }}</a>
+                  </h2>
+                  {% if item.variant.title != 'Default Title' %}
+                    <p class="cart__item--variant">{{ item.variant.title }}</p>
+                  {% endif %}
+                  <div class="cart__item--quantity">
+                    <form method="post" action="/cart/change" class="cart__qty-form">
+                      <input type="hidden" name="id" value="{{ item.key }}">
+                      <input type="number" name="quantity" value="{{ item.quantity }}" min="0" class="input--qty">
+                      <button type="submit" class="btn btn--outline btn--small">Update</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="cart__item--price">
+                  {{ item.final_line_price | money }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="cart__footer">
+            <div class="cart__total">
+              <span>Total:</span> <strong>{{ cart.total_price | money }}</strong>
+            </div>
+            <form action="/checkout" method="post">
+              <button type="submit" class="btn btn--primary btn--large">Checkout</button>
+            </form>
+          </div>
+        {% else %}
+          <p>Your bag is empty.</p>
+          {% render 'button', 
+            href: 'collections/new', 
+            label: 'Start Shopping', 
+            variant: 'outline' 
+          %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

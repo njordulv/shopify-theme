@@ -1,22 +1,22 @@
-{% assign classes = "btn btn--" | append: variant | default: 'primary' %}
+{% assign classes = "btn btn--" | append: (variant | default: 'primary') %}
 
 {% if extra_class %}
   {% assign classes = classes | append: " " | append: extra_class %}
 {% endif %}
 
 {% if href %}
-    <a 
-        href="{{ href }}" 
-        class="{{ classes }}"
-    >
-        {{ label }}
-    </a>
+  <a 
+    href="{{ href }}" 
+    class="{{ classes }}"
+  >
+    {{ label }}
+  </a>
 {% else %}
-    <button 
-        type="button" 
-        onclick="window.location.href = '{{ link }}'" 
-        class="{{ classes }}"
-    >
-        {{ label }}
-    </button>
+  <button 
+    type="{{ type | default: 'button' }}" 
+    {% if link %}onclick="window.location.href='{{ link }}'"{% endif %}
+    class="{{ classes }}"
+  >
+    {{ label }}
+  </button>
 {% endif %}
