@@ -1,0 +1,18 @@
+<form 
+    method="post"
+    action="/cart/add"
+    class="product__form"
+>
+    <input 
+        type="hidden" 
+        name="id" 
+        value="{{ product.selected_or_first_available_variant.id }}"
+    >
+    {% render 'button',
+        type: 'submit',
+        link: product.url,
+        label: 'Add To Bag',
+        variant: 'primary',
+        extra_class: 'btn--w-auto btn--large',
+    %}
+</form>

@@ -32,6 +32,16 @@
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--color-primary);
+
+    &--sale {
+      color: var(--color-primary);
+    }
+
+    &--compare {
+      color: var(--color-muted-foreground);
+      text-decoration: line-through;
+      font-size: 0.9rem;
+    }
   }
 
   &__options {
@@ -47,8 +57,45 @@
     }
   }
 
+  &__tags {
+    & p {
+      padding-bottom: 0.25rem;
+    }
+
+    & ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 0.5rem;
+    }
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
+  }
+}
+
+.option-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+
+  &--color {
+    & label {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      min-width: auto;
+      border-radius: 50%;
+      border: 2px solid var(--color-accent);
+      display: inline-block;
+      cursor: pointer;
+
+      span {
+        display: none;
+      }
+    }
   }
 }

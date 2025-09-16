@@ -7,8 +7,8 @@
   border-radius: var(--radius);
   padding: 0 12px;
   min-height: 32px;
-  text-decoration: none;
   font-size: 0.75rem;
+  text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -49,11 +49,18 @@
   &--w-auto {
     width: auto;
   }
+
+  &--large {
+    border-radius: calc(var(--radius) + 2px);
+    padding: 0 18px;
+    min-height: 44px;
+    font-size: 0.9rem;
+  }
+    
 }
 
 .variant-btn {
-  min-width: 2.2rem;
-  padding: 0;
+  min-width: 2.56rem;
 }
 
 .variant-radio:checked + .variant-btn {

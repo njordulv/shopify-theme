@@ -1,0 +1,16 @@
+<div class="product__tags">
+    <p>Tags</p>
+    <ul>
+    {% for tag in product.tags %}
+        <li>
+            {% render 'button', 
+                type: 'link', 
+                link: '/collections/all/{{ tag | handleize }}', 
+                label: tag,
+                variant: 'outline',
+                extra_class: 'btn--outline',
+            %}
+        </li>
+    {% endfor %}
+    </ul>
+</div>

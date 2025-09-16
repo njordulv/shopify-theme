@@ -1,0 +1,23 @@
+{% unless product.has_only_default_variant %}
+    {% for option in product.options_with_values %}
+        <fieldset class="product__options">
+          <legend>{{ option.name }}</legend>
+          <div class="option-group option-group--{{ option.name | handleize }}">
+            {% for value in option.values %}
+              {% assign input_id = 'option-' | append: forloop.parentloop.index0 | append: '-' | append: forloop.index0 %}
+              <input 
+                type="radio"
+                id="{{ input_id }}"
+                name="{{ option.name | handleize }}"
+                value="{{ value | escape }}"
+                class="variant-radio sr-only"
+                {% if value == option.selected_value %}checked{% endif %}
+              >
+              <label for="{{ input_id }}" class="variant-btn btn btn--outline" style="background-color: {{ value | handleize }}">
+                <span>{{ value }}</span>
+              </label>
+            {% endfor %}
+          </div>
+        </fieldset>
+      {% endfor %}
+  {% endunless %}

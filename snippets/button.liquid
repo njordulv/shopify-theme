@@ -5,11 +5,18 @@
 {% endif %}
 
 {% if href %}
-    <a href="{{ href }}" class="{{ classes }}">
+    <a 
+        href="{{ href }}" 
+        class="{{ classes }}"
+    >
         {{ label }}
     </a>
 {% else %}
-    <button type="button" onclick="window.location.href = '{{ link }}'" class="{{ classes }}">
+    <button 
+        type="button" 
+        onclick="window.location.href = '{{ link }}'" 
+        class="{{ classes }}"
+    >
         {{ label }}
     </button>
 {% endif %}

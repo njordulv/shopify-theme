@@ -1,0 +1,5 @@
+{% if product.metafields.custom.shipping_time %}
+    <div class="product__shipping">
+        🚚 Delivery: {{ product.metafields.custom.shipping_time }}
+    </div>
+{% endif %}
