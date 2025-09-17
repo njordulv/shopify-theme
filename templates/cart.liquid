@@ -2,56 +2,105 @@
   <div class="product full-width">
     <div class="product__content">
       <div class="product__inner">
-        <h1 class="product__title">My Bag</h1>
-
+        <h1 class="product__title">
+          My Bag
+             {% if cart.item_count > 1 %}
+              <span>({{ cart.item_count | append: ' items' }})</span>
+             {% else %}
+             <span>({{ cart.item_count | append: ' item' }})</span>
+             {% endif %}
+        </h1>
         {% if cart.item_count > 0 %}
-          <div class="cart__items">
+          <div class="cart">
             {% for item in cart.items %}
               <div class="cart__item">
                 <div class="cart__item--image">
                   <img 
-                    src="{{ item.image | image_url: width: 100, height: 100 }}" 
+                    src="{{ item.image | image_url: width: 80, height: 80 }}" 
                     alt="{{ item.image.alt | escape }}" 
                     class="rounded-lg"
                   />
                 </div>
                 <div class="cart__item--details">
                   <h2 class="cart__item--title">
-                    <a href="{{ item.url }}">{{ item.product.title }}</a>
+                    <a href="{{ item.url }}">
+                      {{ item.product.title }}
+                    </a>
                   </h2>
                   {% if item.variant.title != 'Default Title' %}
-                    <p class="cart__item--variant">{{ item.variant.title }}</p>
+                    <p class="cart__item--variant">
+                      {{ item.variant.title }}
+                    </p>
                   {% endif %}
                   <div class="cart__item--quantity">
-                    <form method="post" action="/cart/change" class="cart__qty-form">
-                      <input type="hidden" name="id" value="{{ item.key }}">
-                      <input type="number" name="quantity" value="{{ item.quantity }}" min="0" class="input--qty">
-                      <button type="submit" class="btn btn--outline btn--small">Update</button>
+                    <form 
+                        method="post" 
+                        action="/cart/change" 
+                        class="cart__qty-form"
+                    >
+                        <input 
+                            type="hidden" 
+                            name="id" 
+                            value="{{ item.key }}"
+                        >
+                        <input 
+                            type="number" 
+                            name="quantity" 
+                            value="{{ item.quantity }}" 
+                            min="0" 
+                            class="input--qty"
+                        >
+                        <div class="cart__item--actions">
+                          {% render 'button',
+                            type: 'submit',
+                            label: 'Update', 
+                            variant: 'secondary'
+                            extra_class: 'btn--w-full'
+                          %}
+                          {% render 'button',
+                            link: item.url_to_remove,
+                            label: 'Remove', 
+                            variant: 'danger',
+                            extra_class: 'btn--w-full'
+                          %}
+                        </div>
                     </form>
                   </div>
                 </div>
                 <div class="cart__item--price">
-                  {{ item.final_line_price | money }}
+                   Total: <strong>{{ item.final_line_price | money }}</strong>
                 </div>
               </div>
             {% endfor %}
           </div>
-
           <div class="cart__footer">
             <div class="cart__total">
-              <span>Total:</span> <strong>{{ cart.total_price | money }}</strong>
+                <span>
+                    Subtotal:
+                </span>&nbsp;
+                <strong>
+                    {{ cart.total_price | money }}
+                </strong>
             </div>
-            <form action="/checkout" method="post">
-              <button type="submit" class="btn btn--primary btn--large">Checkout</button>
+            <form 
+                action="/checkout" 
+                method="post"
+            >
+                <button 
+                    type="submit" 
+                    class="btn btn--primary"
+                >
+                    Proceed Checkout
+                </button>
             </form>
           </div>
         {% else %}
           <p>Your bag is empty.</p>
-          {% render 'button', 
-            href: 'collections/new', 
-            label: 'Start Shopping', 
-            variant: 'outline' 
-          %}
+            {% render 'button', 
+                href: 'collections/new', 
+                label: 'Start Shopping', 
+                variant: 'outline' 
+            %}
         {% endif %}
       </div>
     </div>

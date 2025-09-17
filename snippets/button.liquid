@@ -1,4 +1,5 @@
-{% assign classes = "btn btn--" | append: (variant | default: 'primary') %}
+{% assign btn_variant = variant | default: 'primary' %}
+{% assign classes = "btn btn--" | append: btn_variant %}
 
 {% if extra_class %}
   {% assign classes = classes | append: " " | append: extra_class %}

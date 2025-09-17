@@ -40,6 +40,16 @@
     }
   }
 
+  &--danger {
+    background-color: var(--color-destructive);
+    color: var(--color-destructive-foreground);
+    border-color: var(--color-destructive);
+    &:hover {
+      background-color: color-mix(in srgb, var(--color-destructive) 85%, white);
+      color: var(--color-destructive-foreground);
+    }
+  }
+
   &--disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -50,13 +60,16 @@
     width: auto;
   }
 
+  &--w-full {
+    width: 100%;
+  }
+
   &--large {
     border-radius: calc(var(--radius) + 2px);
     padding: 0 18px;
     min-height: 44px;
     font-size: 0.9rem;
   }
-    
 }
 
 .variant-btn {
