@@ -1,8 +1,8 @@
 <div class="shopify-section">
-  <div class="product full-width">
-    <div class="product__content">
-      <div class="product__inner">
-        <h1 class="product__title">
+  <div class="page full-width">
+    <div class="page__content">
+      <div class="page__inner">
+        <h1 class="page__title">
           My Bag
             {% if cart.item_count > 1 %}
               <span>({{ cart.item_count | append: ' items' }})</span>
@@ -35,16 +35,16 @@
                         class="cart__qty-form"
                     >
                         <input 
-                            type="hidden" 
-                            name="id" 
-                            value="{{ item.key }}"
+                          type="hidden" 
+                          name="id" 
+                          value="{{ item.key }}"
                         >
                         <input 
-                            type="number" 
-                            name="quantity" 
-                            value="{{ item.quantity }}" 
-                            min="0" 
-                            class="input--qty"
+                          type="number" 
+                          name="quantity" 
+                          value="{{ item.quantity }}" 
+                          min="0" 
+                          class="input--qty"
                         >
                         <div class="cart__item--actions">
                           {% render 'button',
@@ -64,7 +64,7 @@
                   </div>
                 </div>
                 <div class="cart__item--price">
-                   Total: <strong>{{ item.final_line_price | money }}</strong>
+                  Total: <strong>{{ item.final_line_price | money }}</strong>
                 </div>
               </div>
             {% endfor %}
@@ -72,22 +72,22 @@
           <div class="cart__footer">
             <div class="cart__total">
                 <span>
-                    Subtotal:
+                  Subtotal:
                 </span>&nbsp;
                 <strong>
-                    {{ cart.total_price | money }}
+                  {{ cart.total_price | money }}
                 </strong>
             </div>
             <form 
-                action="/checkout" 
-                method="post"
+              action="/checkout" 
+              method="post"
             >
-                <button 
-                    type="submit" 
-                    class="btn btn--primary"
-                >
-                    Proceed Checkout
-                </button>
+              <button 
+                type="submit" 
+                class="btn btn--primary"
+              >
+                Proceed Checkout
+              </button>
             </form>
           </div>
         {% else %}
@@ -95,7 +95,7 @@
             {% render 'button', 
                 href: 'collections/new', 
                 label: 'Start Shopping', 
-                variant: 'outline' 
+                variant: 'primary' 
             %}
         {% endif %}
       </div>
