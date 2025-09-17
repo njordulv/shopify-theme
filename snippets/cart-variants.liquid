@@ -1,0 +1,13 @@
+{% if variant.title != 'Default Title' and product.options.size > 0 %}
+    <div class="cart-variant-options">
+      {% for option in product.options %}
+        {% assign option_index = forloop.index0 %}
+        {% assign option_value = variant.options[option_index] %}
+        
+        <div class="cart-variant-option">
+          <span class="cart-variant-option__name">{{ option }}:</span>
+          <span class="cart-variant-option__value">{{ option_value }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}

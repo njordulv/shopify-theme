@@ -2,11 +2,13 @@
     method="post"
     action="/cart/add"
     class="product__form"
+    id="product-form-{{ product.id }}"
 >
     <input 
         type="hidden" 
         name="id" 
         value="{{ product.selected_or_first_available_variant.id }}"
+        id="variant-id-{{ product.id }}"
     >
     {% render 'button',
         type: 'submit',
@@ -16,3 +18,30 @@
         extra_class: 'btn--w-auto btn--large',
     %}
 </form>
+
+<script id="product-data-json" type="application/json">
+{
+  "id": {{ product.id | json }},
+  "variants": [
+    {% for variant in product.variants %}
+    {
+      "id": {{ variant.id | json }},
+      "title": {{ variant.title | json }},
+      "options": {{ variant.options | json }},
+      "available": {{ variant.available | json }},
+      "price": {{ variant.price | json }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "options": {{ product.options | json }},
+  "options_with_values": [
+    {% for option in product.options_with_values %}
+    {
+      "name": {{ option.name | json }},
+      "values": {{ option.values | json }},
+      "selected_value": {{ option.selected_value | json }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>

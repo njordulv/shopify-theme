@@ -54,6 +54,29 @@
     text-align: right;
   }
 
+  &__item--variants {
+    font-size: 0.675rem;
+  }
+
+  .cart-variant-options {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.7rem;
+  }
+
+  .cart-variant-option {
+    display: flex;
+    gap: 0.2rem;
+  }
+
+  .cart-variant-option__name {
+    color: var(--color-muted-foreground);
+  }
+
+  .cart-variant-option__value {
+    color: var(--color-primary);
+  }
+
   &__footer {
     display: flex;
     justify-content: space-between;

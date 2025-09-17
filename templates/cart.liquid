@@ -4,11 +4,11 @@
       <div class="product__inner">
         <h1 class="product__title">
           My Bag
-             {% if cart.item_count > 1 %}
+            {% if cart.item_count > 1 %}
               <span>({{ cart.item_count | append: ' items' }})</span>
-             {% else %}
-             <span>({{ cart.item_count | append: ' item' }})</span>
-             {% endif %}
+            {% else %}
+              <span>({{ cart.item_count | append: ' item' }})</span>
+            {% endif %}
         </h1>
         {% if cart.item_count > 0 %}
           <div class="cart">
@@ -27,11 +27,7 @@
                       {{ item.product.title }}
                     </a>
                   </h2>
-                  {% if item.variant.title != 'Default Title' %}
-                    <p class="cart__item--variant">
-                      {{ item.variant.title }}
-                    </p>
-                  {% endif %}
+                  {% render 'cart-variants', product: item.product, variant: item.variant %}
                   <div class="cart__item--quantity">
                     <form 
                         method="post" 
