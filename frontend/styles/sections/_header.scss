@@ -1,0 +1,59 @@
+header {
+  background-color: var(--color-primary-foreground);
+}
+
+.header {
+  &__wrapper {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      position: relative;
+      text-decoration: none;
+      color: var(--color-secondary-foreground);
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__title {
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 0.2rem;
+    list-style: none;
+    padding: 0;
+
+    a {
+      padding: 0.1rem 0.7rem;
+      color: var(--color-secondary-foreground);
+      border-radius: var(--radius);
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--color-secondary);
+        background-color: var(--color-primary);
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 0.8rem;
+
+    svg {
+      width: 2rem;
+    }
+
+    sup {
+      position: absolute;
+      left: 100%;
+      overflow: hidden;
+      max-width: var(--page-margin);
+    }
+  }
+}
