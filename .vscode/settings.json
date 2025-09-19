@@ -1,5 +1,4 @@
 {
-  "prettier.documentSelectors": ["**/*.liquid"],
   "scss.lint.unknownAtRules": "ignore",
   "css.lint.unknownAtRules": "ignore"
 }

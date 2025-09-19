@@ -60,6 +60,12 @@
         "unit": "rem",
         "label": "t:labels.radius",
         "default": 0.3
+      },
+      {
+        "type": "number",
+        "id": "page_narrow",
+        "default": 48,
+        "label": "t:labels.page_narrow"
       }
     ]
   },
