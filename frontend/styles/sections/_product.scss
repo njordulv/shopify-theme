@@ -10,6 +10,10 @@
     gap: 2rem;
     width: 100%;
     padding: 0;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
   }
 
   &__inner--left {

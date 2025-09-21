@@ -1,7 +1,15 @@
 <div class="card">
-    <h3 class="card--title">{{ title }}</h3>
-    <p class="card--description">{{ description }}</p>
+    <h3 class="card--title">
+        {{ title }}
+    </h3>
+    <p class="card--description">
+        {{ description }}
+    </p>
     {% if link and label %}
-        {% render 'button', href: link, label: label, variant: 'primary' %}
+        {% render 'button', 
+            href: link, 
+            label: label, 
+            variant: 'primary' 
+        %}
     {% endif %}
 </div>

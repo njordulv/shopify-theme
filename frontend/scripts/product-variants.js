@@ -42,11 +42,11 @@ export function initProductVariants(productData) {
     if (button) {
       if (available) {
         button.disabled = false
-        button.textContent = 'Add To Bag'
+        button.textContent = 'product.bag' | t
         button.classList.remove('btn--disabled')
       } else {
         button.disabled = true
-        button.textContent = 'Out of Stock'
+        button.textContent = 'product.stock' | t
         button.classList.add('btn--disabled')
       }
     }

@@ -3,10 +3,10 @@
     <div class="page__content">
       <div class="page__inner">
         <h1>{{ '404.title' | t }}</h1>
-        <p>{{ '404.not_found' | t }}</p>
+        <div>{{ '404.not_found' | t }}</div>
         {% render 'button', 
           href: routes.root_url, 
-          label: '404.back_to' | t, 
+          label: '404.back' | t, 
           variant: 'primary' 
         %}
       </div>

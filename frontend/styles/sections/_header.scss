@@ -28,6 +28,10 @@ header {
     list-style: none;
     padding: 0;
 
+    @media (max-width: 991px) {
+      display: none;
+    }
+
     a {
       padding: 0.2rem 0.7rem;
       color: var(--color-secondary-foreground);

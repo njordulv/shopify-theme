@@ -2,7 +2,7 @@
   "404": {
     "title": "404",
     "not_found": "Sorry, this page does not exist.",
-    "back_to": "Back to home"
+    "back": "Back to home"
   },
   "blog": {
     "article_comments": "Comments",
@@ -14,10 +14,20 @@
     "comment_form_title": "Add a comment"
   },
   "cart": {
-    "checkout": "Checkout",
-    "title": "Cart",
+    "title": "My Bag",
+    "item": "item",
+    "items": "items",
     "update": "Update",
-    "remove": "Remove"
+    "remove": "Remove",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "empty": "Your bag is empty.",
+    "tax": "Tax",
+    "shipping": "Shipping",
+    "discount": "Discount",
+    "checkout": "Procced Checkout",
+    "shopping": "Start Shopping",
+    "gift_card": "Gift Card"
   },
   "customers": {
     "login": {
@@ -41,6 +51,11 @@
     "title": "This shop is private",
     "password": "Password",
     "enter": "Enter"
+  },
+  "product": {
+    "more": "View more",
+    "bag": "Add to bag",
+    "stock": "Out of Stock"
   },
   "search": {
     "title": "Search",

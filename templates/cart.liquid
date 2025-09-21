@@ -1,14 +1,17 @@
+{% assign items = 'cart.items' | t %}
+{% assign item = 'cart.item' | t %}
+
 <div class="shopify-section">
   <div class="page full-width">
     <div class="page__content">
       <div class="page__inner">
         <h1 class="page__title">
-          My Bag
-            {% if cart.item_count > 1 %}
-              <span>({{ cart.item_count | append: ' items' }})</span>
-            {% else %}
-              <span>({{ cart.item_count | append: ' item' }})</span>
-            {% endif %}
+          {{ 'cart.title' | t }}
+          {% if cart.item_count > 1 %}
+            <span>({{ cart.item_count | append: ' ' | append: items }})</span>
+          {% else %}
+            <span>({{ cart.item_count | append: ' ' | append: item }})</span>
+          {% endif %}
         </h1>
         {% if cart.item_count > 0 %}
           <div class="cart">
@@ -49,13 +52,13 @@
                         <div class="cart__item--actions">
                           {% render 'button',
                             type: 'submit',
-                            label: 'Update', 
-                            variant: 'secondary'
+                            label: 'cart.update' | t, 
+                            variant: 'secondary',
                             extra_class: 'btn--w-full'
                           %}
                           {% render 'button',
                             link: item.url_to_remove,
-                            label: 'Remove', 
+                            label: 'cart.remove' | t,
                             variant: 'danger',
                             extra_class: 'btn--w-full'
                           %}
@@ -64,7 +67,7 @@
                   </div>
                 </div>
                 <div class="cart__item--price">
-                  Total: <strong>{{ item.final_line_price | money }}</strong>
+                  {{ 'cart.total' | t }}: <strong>{{ item.final_line_price | money }}</strong>
                 </div>
               </div>
             {% endfor %}
@@ -82,21 +85,22 @@
               action="/checkout" 
               method="post"
             >
-              <button 
-                type="submit" 
-                class="btn btn--primary"
-              >
-                Proceed Checkout
-              </button>
+              {% render 'button', 
+                type: 'submit',
+                label: 'cart.checkout' | t,
+                variant: 'primary'
+              %}
             </form>
           </div>
         {% else %}
-          <p>Your bag is empty.</p>
-            {% render 'button', 
-                href: 'collections/new', 
-                label: 'Start Shopping', 
-                variant: 'primary' 
-            %}
+          <div>
+            {{ 'cart.empty' | t }}
+          </div>
+          {% render 'button', 
+            href: 'collections/new', 
+            label: 'cart.shopping' | t, 
+            variant: 'primary' 
+          %}
         {% endif %}
       </div>
     </div>

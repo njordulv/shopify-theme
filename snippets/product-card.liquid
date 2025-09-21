@@ -23,7 +23,7 @@
     {% if product.url %}
         {% render 'button', 
             href: product.url, 
-            label: 'View more', 
+            label: 'product.more' | t, 
             variant: 'outline', 
             extra_class: 'btn--w-auto' 
         %}
