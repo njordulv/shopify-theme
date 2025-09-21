@@ -60,6 +60,17 @@ dialog {
   &--narrow {
     --content-width: var(--page-narrow);
   }
+
+  &--404 {
+    --content-width: var(--page-narrow);
+    min-height: calc(100vh - 10rem);
+    place-content: center;
+    text-align: center;
+
+    .page__content {
+      justify-content: center;
+    }
+  }
 }
 
 .shopify-section > * {
