@@ -2,8 +2,13 @@
   <div class="page full-width">
     <div class="page__content">
       <div class="page__inner">
-        <h1>404</h1>
-        <p>Sorry, this page does not exist.</p>
+        <h1>{{ '404.title' | t }}</h1>
+        <p>{{ '404.not_found' | t }}</p>
+        {% render 'button', 
+          href: routes.root_url, 
+          label: '404.back_to' | t, 
+          variant: 'primary' 
+        %}
       </div>
     </div>
   </div>

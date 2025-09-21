@@ -1,6 +1,12 @@
 {% assign btn_variant = variant | default: 'primary' %}
 {% assign classes = "btn btn--" | append: btn_variant %}
 
+{% if label contains '.' %}
+  {% assign t_label = label | t %}
+{% else %}
+  {% assign t_label = label %}
+{% endif %}
+
 {% if extra_class %}
   {% assign classes = classes | append: " " | append: extra_class %}
 {% endif %}
@@ -10,7 +16,7 @@
     href="{{ href }}" 
     class="{{ classes }}"
   >
-    {{ label }}
+    {{ t_label }}
   </a>
 {% else %}
   <button 
@@ -18,6 +24,6 @@
     {% if link %}onclick="window.location.href='{{ link }}'"{% endif %}
     class="{{ classes }}"
   >
-    {{ label }}
+    {{ t_label }}
   </button>
 {% endif %}

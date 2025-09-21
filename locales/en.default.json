@@ -1,8 +1,8 @@
 {
   "404": {
     "title": "404",
-    "not_found": "Page not found.",
-    "back_to_shopping": "Back to shopping"
+    "not_found": "Sorry, this page does not exist.",
+    "back_to": "Back to home"
   },
   "blog": {
     "article_comments": "Comments",
