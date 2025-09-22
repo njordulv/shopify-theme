@@ -1,10 +1,13 @@
 {
-  "assets/icon-cart.svg": {
-    "file": "assets/icon-cart.svg",
-    "src": "assets/icon-cart.svg"
+  "frontend/entrypoints/theme.js": {
+    "file": "theme-D5ND06bm.js",
+    "name": "theme",
+    "src": "frontend/entrypoints/theme.js",
+    "isEntry": true
   },
-  "assets/shopify-logo.svg": {
-    "file": "assets/shopify-logo.svg",
-    "src": "assets/shopify-logo.svg"
+  "frontend/entrypoints/theme.scss": {
+    "file": "theme-B9eQpF34.css",
+    "src": "frontend/entrypoints/theme.scss",
+    "isEntry": true
   }
 }
