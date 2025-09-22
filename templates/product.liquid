@@ -6,6 +6,9 @@
                     src="{{ product.featured_image | image_url: width: 400, height: 400  }}" 
                     alt="{{ product.featured_image.alt }}" 
                     class="product__image rounded-lg"
+                    loading="lazy"
+                    width="400"
+                    height="400"
                 />
             </div>
             <div class="product__inner--right">

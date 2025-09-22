@@ -1,11 +1,11 @@
-<div class="featured-collection">
+<div class="collection">
     {% if section.settings.title != blank %}
-        <h2 class="featured-collection__header">
+        <h2 class="collection__header">
             {{ section.settings.title | escape }}
         </h2>
     {% endif %}
     {% if section.settings.collection != blank %}
-        <div class="featured-collection__products">
+        <div class="collection__products">
             {% for product in section.settings.collection.products limit: section.settings.products_to_show %}
                 {% render 'product-card', product: product %}
             {% endfor %}

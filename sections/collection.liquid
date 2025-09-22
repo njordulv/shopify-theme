@@ -1,19 +1,21 @@
 <div class="collection">
-    <h1>{{ collection.title }}</h1>
-    <div class="collection-products">
-        {% for product in collection.products %}
-          <div class="product">
-            <a href="{{ product.url }}">
-              {{ product.title }}
-            </a>
-          </div>
-        {% endfor %}
+  <h1 class="collection__header">
+      {{ collection.title }}
+    </h1>
+    {% if collection.products.size > 0 %}
+    <div class="collection__products">
+      {% for product in collection.products %}
+        {% render 'product-card', product: product %} 
+      {% endfor %}
     </div>
+    {% else %}
+      <p>No products found in this collection.</p>
+    {% endif %}
 </div>
 
 {% schema %}
-    {
-      "name": "Collection",
-      "settings": []
-    }
+  {
+    "name": "Collection",
+    "settings": []
+  }
 {% endschema %}    
