@@ -5,5 +5,7 @@
 
   @media (max-width: 991px) {
     grid-template-columns: 1fr;
+    max-width: 80ch;
+    margin: 0 auto;
   }
 }

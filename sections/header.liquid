@@ -1,6 +1,23 @@
 <div class="header__wrapper">
-  <div class="header__title">
-    {{ shop.name | link_to: routes.root_url }}
+  <div class="header__logo">
+    <a 
+      href="{{ routes.root_url }}"
+      class="header__link"
+    >
+      {% if section.settings.logo != blank %}
+        <img 
+          srcset="{{ section.settings.logo | image_url: width: 40 }} 40w, {{ section.settings.logo | image_url: width: 80 }} 80w" 
+          src="{{ section.settings.logo | image_url: width: 80 }}"
+          alt="{{ shop.name }}" 
+          class="header__logo"
+          width="40"
+          height="40"
+        >
+        <span>Store</span>
+      {% else %}
+        {{ shop.name }}
+      {% endif %}
+    </a>
   </div>
 
   <ul class="header__menu">
@@ -28,6 +45,11 @@
       "type": "link_list",
       "id": "menu",
       "label": "t:labels.menu"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
     }
   ]
 }

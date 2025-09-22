@@ -5,9 +5,15 @@ header {
 .header {
   &__wrapper {
     height: 4rem;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: 991px) {
+      max-width: 80ch;
+      margin: 0 auto;
+    }
 
     a {
       position: relative;
@@ -17,9 +23,15 @@ header {
     }
   }
 
-  &__title {
-    font-size: 1.8em;
+  &__logo {
+    font-size: 1.3em;
     font-weight: bold;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   &__menu {

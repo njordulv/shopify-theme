@@ -58,12 +58,14 @@ dialog {
   width: 100%;
 
   &--narrow {
-    --content-width: var(--page-narrow);
+    max-width: var(--page-narrow);
+    margin: 0 auto;
   }
 
   &--404 {
-    --content-width: var(--page-narrow);
+    max-width: var(--page-narrow);
     min-height: calc(100vh - 10rem);
+    margin: 0 auto;
     place-content: center;
     text-align: center;
 

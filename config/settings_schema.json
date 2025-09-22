@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Njordr-theme",
-    "theme_version": "0.4.1",
+    "theme_version": "0.5.1",
     "theme_author": "Njordr",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
@@ -221,6 +221,16 @@
         "id": "sidebar_color",
         "default": "#fbfbfb",
         "label": "t:labels.sidebar"
+      }
+    ]
+  },
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
       }
     ]
   }

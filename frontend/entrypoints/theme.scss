@@ -1,8 +1,9 @@
 @use '@/styles/base/reset';
 @use '@/styles/base/globals';
+@use '@/styles/sections/header';
+@use '@/styles/sections/footer';
 @use '@/styles/components/button';
 @use '@/styles/components/cards';
-@use '@/styles/sections/header';
 @use '@/styles/sections/hero';
 @use '@/styles/sections/highlights';
 @use '@/styles/sections/collection';

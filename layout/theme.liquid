@@ -3,6 +3,9 @@
   <head>
     {% render 'css-variables' %}
     {% render 'meta-tags' %}
+    {% if settings.favicon %}
+      <link rel="icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {% endif %}
     {%- liquid
       render 'vite-tag' with 'theme.scss'
       render 'vite-tag' with 'theme.js'

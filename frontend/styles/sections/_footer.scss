@@ -1,0 +1,26 @@
+footer {
+  background-color: var(--color-primary-foreground);
+}
+.footer {
+  &__wrapper {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 991px) {
+      max-width: 80ch;
+      margin: 0 auto;
+    }
+  }
+  &__wrapper a {
+    text-decoration: none;
+    color: var(--color-foreground);
+  }
+  &__wrapper .footer__links,
+  &__wrapper .footer__payment {
+    display: flex;
+    gap: 1rem;
+  }
+}
