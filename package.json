@@ -6,10 +6,10 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "run-p -sr \"shopify:dev -- {@}\" \"vite:dev\" --",
-    "deploy": "run-s \"vite:build\" \"shopify:push -- {@}\" --",
-    "shopify:dev": "shopify theme dev",
-    "shopify:push": "shopify theme push",
+    "dev": "run-p -sr \"shopify:dev\" \"vite:dev\"",
+    "deploy": "run-s \"vite:build\" \"shopify:push\"",
+    "shopify:dev": "shopify theme dev --theme=$SHOPIFY_THEME_ID",
+    "shopify:push": "shopify theme push --theme=$SHOPIFY_THEME_ID",
     "vite:dev": "vite",
     "vite:build": "vite build"
   }
