@@ -38,6 +38,7 @@
     "chart_4_color": "#ffe6c4",
     "chart_5_color": "#66493e",
     "sidebar_color": "#fbfbfb",
+    "favicon": "shopify://shop_images/apple-touch-icon.png",
     "sections": {
       "hero": {
         "type": "hero",

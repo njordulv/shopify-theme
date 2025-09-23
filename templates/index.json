@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -39,7 +48,11 @@
           }
         }
       },
-      "block_order": ["card_yeCH69", "card_9f3aDK", "card_wwmwbA"],
+      "block_order": [
+        "card_yeCH69",
+        "card_9f3aDK",
+        "card_wwmwbA"
+      ],
       "name": "Hightlights Section",
       "settings": {}
     },
@@ -51,7 +64,87 @@
         "collection": "featured",
         "products_to_show": 20
       }
+    },
+    "testimonials_bYzpUi": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_PVVJDM": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Exceeded my expectations. I’ll definitely buy again.",
+            "author": "James K.",
+            "image": "shopify://shop_images/test-6.jpg"
+          }
+        },
+        "testimonial_g7e8Fy": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Great customer service and fantastic design. Highly recommend!",
+            "author": "Sophia M.",
+            "image": "shopify://shop_images/test-3.jpg"
+          }
+        },
+        "testimonial_DE3ifH": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "I was skeptical at first, but this turned out to be amazing.",
+            "author": "Liam T.",
+            "image": "shopify://shop_images/test-2.jpg"
+          }
+        },
+        "testimonial_pGnJAP": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Fast delivery and the product works perfectly. Very happy!",
+            "author": "Olivia R.",
+            "image": "shopify://shop_images/test-1.jpg"
+          }
+        },
+        "testimonial_bF6xJM": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Top-notch quality, exactly as described. Will recommend to friends.",
+            "author": "Noah S.",
+            "image": "shopify://shop_images/test-4.jpg"
+          }
+        },
+        "testimonial_Nnpqaf": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Absolutely love this product! High quality and fast shipping.",
+            "author": "Emma L.",
+            "image": "shopify://shop_images/test-5_656b0491-b9a2-489d-a0de-ce0377b9a3f8.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_PVVJDM",
+        "testimonial_g7e8Fy",
+        "testimonial_DE3ifH",
+        "testimonial_pGnJAP",
+        "testimonial_bF6xJM",
+        "testimonial_Nnpqaf"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "title": "Testimonials"
+      }
+    },
+    "blog_articles_rGXpeR": {
+      "type": "blog-articles",
+      "name": "Blog Articles",
+      "settings": {
+        "title": "Latest Articles",
+        "blog": "news",
+        "articles_count": 3
+      }
     }
   },
-  "order": ["main", "highlights_KBick9", "featured_collection_P39NQi"]
+  "order": [
+    "main",
+    "highlights_KBick9",
+    "featured_collection_P39NQi",
+    "testimonials_bYzpUi",
+    "blog_articles_rGXpeR"
+  ]
 }

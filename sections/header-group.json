@@ -14,7 +14,8 @@
     "header": {
       "type": "header",
       "settings": {
-        "menu": "header-menu"
+        "menu": "header-menu",
+        "logo": "shopify://shop_images/apple-touch-icon.png"
       }
     }
   },
