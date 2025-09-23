@@ -13,36 +13,72 @@ Dynamic cart icon with item count.
 
 ### Theme Settings
 
-Upload and manage a favicon.
-Typography controls with font_picker.
-Layout options: max page width, page margin, border radius.
-Full color system (background, foreground, primary, secondary, accent, destructive, border, input, chart colors, sidebar).
+- Upload and manage a favicon.
+- Typography controls with font_picker.
+- Layout options: max page width, page margin, border radius.
+- Full color system (background, foreground, primary, secondary, accent, destructive, border, input, chart colors, sidebar).
+- Multi-language Support (i18n).
+
+### Modern Build System (Vite)
+
+- Fast development server with hot reload.
+- Optimized asset bundling for production.
+- Plugins for Shopify theme integration and asset cleaning.
 
 ### Lightweight & Clean
 
-Minimal default styling, easy to extend.
-Organized schema for intuitive customization.
+- Minimal default styling, easy to extend.
+- Organized schema for intuitive customization.
 
 ## Tech Stack
 
-Shopify Liquid – template engine.
-Theme Schema JSON – for settings and customization.
-SCSS / CSS – theme styling (extendable).
+- Shopify Liquid – template engine
+- Theme Schema JSON – settings and customization
+- Shopify Locales JSON – i18n / translations
+- Vite – build system
+- vite-plugin-shopify & vite-plugin-shopify-clean – Shopify integration
+- SCSS / CSS – extendable theme styling
 
 ## Project Structure
 
-/sections
-header.liquid
-footer.liquid
-...
+```bash
 /assets
-styles.css
-icon-cart.svg
+    theme-XXXX.css
+    theme-XXXX.js
+    icon-cart.svg
+    shopify-logo.svg
 /config
-settings_schema.json
-settings_data.json
+    settings_schema.json
+    settings_data.json
+/frontend
+    entrypoints
+    scripts
+    styles
 /layout
-theme.liquid
+    theme.liquid
+/locales
+    en.default.json
+    en.default.schema.json
+/sections
+    collection.liquid
+    hero.liquid
+    highlights.liquid
+    header.liquid
+    footer.liquid
+    ...
+/snippets
+    button.liquid
+    card.liquid
+    css-variables.liquid
+    ...
+/templates
+    404.liquid
+    cart.liquid
+    product.liquid
+    ...
+vite.config.js
+package.json
+```
 
 ## Getting Started
 
@@ -68,13 +104,10 @@ This uploads your theme to Shopify and makes it available in the admin panel.
 
 ## Customization
 
-Logo → Upload via Theme Editor > Header > Logo.
-
-Favicon → Upload via Theme Settings > Favicon.
-
-Typography → Choose a font in Theme Settings > Typography.
-
-Colors & Layout → Fully adjustable in Theme Settings.
+- Logo → Upload via Theme Editor > Header > Logo.
+- Favicon → Upload via Theme Settings > Favicon.
+- Typography → Choose a font in Theme Settings > Typography.
+- Colors & Layout → Fully adjustable in Theme Settings.
 
 ## Screenshot
 
