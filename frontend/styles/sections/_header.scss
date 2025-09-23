@@ -67,9 +67,16 @@ header {
 
     sup {
       position: absolute;
-      left: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 95%;
       overflow: hidden;
-      max-width: var(--page-margin);
+      font-size: 0.56rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      background-color: var(--color-secondary);
     }
   }
 }

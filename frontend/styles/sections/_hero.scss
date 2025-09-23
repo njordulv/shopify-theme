@@ -1,10 +1,13 @@
 .hero {
+  overflow: hidden;
   display: grid;
   grid-template-columns: var(--content-grid);
-  background-color: #e8e8e8;
+  background-color: var(--color-muted);
   padding: 72px 0;
+  /* height: calc(100svh - 4rem); */
 
   &__content {
+    position: relative;
     grid-column: 2;
     display: flex;
     justify-content: space-between;
@@ -12,6 +15,23 @@
     gap: 1rem;
     width: 100%;
     padding: 0;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20ch;
+      left: 60%;
+      width: 145ch;
+      height: 145ch;
+      transform: rotate(15deg);
+      background-color: color-mix(
+        in srgb,
+        var(--color-background) 65%,
+        var(--color-muted) 10%
+      );
+      z-index: -1;
+    }
 
     @media (max-width: 991px) {
       flex-direction: column;
