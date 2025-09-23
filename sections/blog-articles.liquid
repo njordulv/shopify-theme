@@ -1,0 +1,80 @@
+<div class="blog-section">
+    <h2>
+        {{ section.settings.title }}
+    </h2>
+    {% if articles.size == 0 %}
+        <p>No articles yet.</p>
+    {% endif %}
+    <div class="blog-section__articles">
+        {% assign blog_handle = section.settings.blog %}
+        {% assign articles = blogs[blog_handle].articles | slice: 0, section.settings.articles_count %}
+    
+    {% for article in articles %}
+      <div class="blog-section__article rounded-xl">
+        {% if article.image %}
+          <a 
+            href="{{ article.url }}" 
+            class="blog-section__image"
+          >
+            <img 
+                class="blog-section__image" 
+                src="{{ article.image | image_url: width: 412 }}" 
+                alt="{{ article.title }}"
+                loading="lazy">
+          </a>
+        {% endif %}
+        <div class="blog-section__content">
+            <div class="blog-section__header">
+                <h3>
+                    <a 
+                        href="{{ article.url }}" 
+                        class="blog-section__title"
+                    >
+                        {{ article.title }}
+                    </a>
+                </h3>
+                <p>
+                    {{ article.excerpt | strip_html | truncate: 160 }}
+                </p>
+            </div>
+            {% render 'button', 
+                href: article.url, 
+                label: 'Read more',
+                variant: 'secondary'
+            %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog Articles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "Latest Articles"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Select blog"
+    },
+    {
+      "type": "number",
+      "id": "articles_count",
+      "label": "Number of articles to show",
+      "default": 3
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Articles",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

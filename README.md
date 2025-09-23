@@ -11,6 +11,15 @@ Add or change store logo directly from the theme editor.
 Navigation menu powered by Shopify’s link_list.
 Dynamic cart icon with item count.
 
+### Flexible Sections
+
+- Hero – highlight your main promotion or campaign.
+- Highlights – display up to three key features or offers.
+- Featured Products – showcase selected products on the homepage.
+- Collections Grid – present product categories in a clean grid layout.
+- Testimonials – add customer reviews or demo feedback to build trust.
+- Blog Integration – display recent articles or guides to boost content marketing.
+
 ### Theme Settings
 
 - Upload and manage a favicon.
@@ -63,6 +72,8 @@ Dynamic cart icon with item count.
     collection.liquid
     hero.liquid
     highlights.liquid
+    testimonials.liquid
+    blog.liquid
     header.liquid
     footer.liquid
     ...
