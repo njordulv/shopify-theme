@@ -1,0 +1,77 @@
+<div class="testimonials">
+  {% if section.settings.title != blank %}
+    <h2 class="testimonials__title">
+      {{ section.settings.title | escape }}
+    </h2>
+  {% endif %}
+  <div class="testimonials__items">
+  {% for block in section.blocks %}
+    <div class="testimonials__item card shadow">
+      <blockquote>
+        <div class="testimonials__header">
+          {% if block.settings.image != blank %}
+            <img 
+              class="testimonials__image"
+              src="{{ block.settings.image | img_url: 'master' }}" 
+              alt="{{ block.settings.author }}"
+              width="48"
+              height="48"
+              loading="lazy"
+            >
+          {% endif %}
+          <div class="testimonials__name">
+            {{ block.settings.author }}
+          </div>
+        </div>
+        <div class="testimonials__quote">
+          &quot;{{ block.settings.quote }}&quot;
+        </div>
+      </blockquote>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Testimonials",
+    "settings": [
+      {
+        "id": "title",
+        "type": "text",
+        "label": "Section title",
+        "default": "Testimonials"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "testimonial",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "id": "quote",
+            "type": "text",
+            "label": "Quote"
+          },
+          {
+            "id": "author",
+            "type": "text",
+            "label": "Author"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 6,
+    "presets": [
+      {
+        "name": "Testimonials",
+        "category": "Content"
+      }
+    ]
+  }
+{% endschema %}  
