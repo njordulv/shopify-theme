@@ -15,6 +15,7 @@
     "dev:full": "npm-run-all --parallel dev shopify:dev"
   },
   "dependencies": {
+    "@alpinejs/collapse": "^3.15.0",
     "alpinejs": "^3.15.0"
   }
 }

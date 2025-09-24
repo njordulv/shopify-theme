@@ -132,7 +132,7 @@ header {
       display: flex;
       align-items: center;
       justify-content: center;
-      left: 95%;
+      left: 87%;
       overflow: hidden;
       font-size: 0.56rem;
       width: 0.8rem;
@@ -140,6 +140,7 @@ header {
       border-radius: 50%;
       background-color: var(--color-secondary);
       color: var(--color-secondary-foreground);
+      border: 1px solid var(--color-muted-foreground);
     }
   }
 }

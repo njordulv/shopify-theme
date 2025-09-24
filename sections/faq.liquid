@@ -1,0 +1,79 @@
+<div 
+  class="faq shopify-section--narrow"
+  x-data="{ expanded: null }"
+>
+  <h2 class="faq__title">
+    {{ section.settings.title }}
+  </h2>
+  <h3 class="faq__subtitle">
+    {{ section.settings.subtitle }}
+  </h3>
+  <div class="faq__list">
+    {% for block in section.blocks %}
+      {% assign idx = forloop.index0 %}
+      <div class="faq__item">
+        <h3 class="faq__question">
+          <button
+            type="button"
+            class="faq__trigger"
+            @click="expanded === {{ idx }} ? expanded = null : expanded = {{ idx }}"
+            :aria-expanded="expanded === {{ idx }}"
+            aria-controls="faq-panel-{{ section.id }}-{{ block.id }}"
+          >
+            {{ block.settings.question }}
+            <span 
+              class="faq__icon" 
+              aria-hidden="true"
+              :class="expanded === {{ idx }} ? 'faq__icon--open' : ''"
+            >
+              {{ 'icon-down.svg' | inline_asset_content }}
+            </span>
+          </button>
+        </h3>
+        <div
+          id="faq-panel-{{ section.id }}-{{ block.id }}"
+          class="faq__answer"
+          x-show="expanded === {{ idx }}"
+          x-collapse
+          role="region"
+          :aria-labelledby="'faq-trigger-{{ section.id }}-{{ block.id }}'"
+        >
+          {{ block.settings.answer }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+      "default": "FAQ"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Section subtitle",
+      "default": "Find answers to common questions about our shop."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ item",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "Question?" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "Answer..." }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "FAQ", "category": "Custom" }
+  ]
+}
+{% endschema %}

@@ -8,7 +8,6 @@
     {% endif %}
     {%- liquid
       render 'vite-tag' with 'theme.scss'
-      render 'vite-tag' with 'theme.js'
     -%}
     {{ content_for_header }}
   </head>
@@ -24,5 +23,8 @@
     <footer>
       {% sections 'footer-group' %}
     </footer>
+    {%- liquid
+    render 'vite-tag' with 'theme.js'
+  -%}
   </body>
 </html>
