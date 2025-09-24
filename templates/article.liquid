@@ -1,0 +1,40 @@
+<div class="shopify-section shopify-section--narrow">
+  <div class="page full-width">
+    <div class="page__content">
+      <div class="page__inner">
+        <h1>
+            {{ article.title }}
+        </h1>
+        {% if article.image %}
+            <img
+              src="{{ article.image | image_url: width: 728, height: 412 }}"
+              alt="{{ article.title }}"
+              width="728"
+              height="412"
+              loading="lazy"
+            >
+          {% else %}
+            <img
+              src="{{ 'placeholder-728.svg' | asset_url }}"
+              alt="Placeholder"
+              width="728"
+              height="412"
+              loading="lazy"
+            >
+          {% endif %}
+          
+        <div class="blog-section__meta">
+            <span class="blog-section__date">
+              {{ article.updated_at | date: '%d, %B %Y' }}
+            </span> |
+            <span class="blog-section__author">
+              {{ 'blog.by' | t }} {{ article.author }}
+            </span>
+          </div>
+        <div>
+            {{ article.content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

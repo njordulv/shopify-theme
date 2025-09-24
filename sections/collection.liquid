@@ -1,16 +1,18 @@
 <div class="collection">
   <h1 class="collection__header">
-      {{ collection.title }}
-    </h1>
-    {% if collection.products.size > 0 %}
+    {{ collection.title }}
+  </h1>
+  {% if collection.products.size > 0 %}
     <div class="collection__products">
       {% for product in collection.products %}
         {% render 'product-card', product: product %} 
       {% endfor %}
     </div>
-    {% else %}
-      <p>No products found in this collection.</p>
-    {% endif %}
+  {% else %}
+    <p>
+      {{ 'collections.no_products' | t }}
+    </p>
+  {% endif %}
 </div>
 
 {% schema %}

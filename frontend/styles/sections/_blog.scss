@@ -68,6 +68,13 @@
     gap: 0.67rem;
   }
 
+  &__meta {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--color-muted-foreground);
+  }
+
   &__content {
     display: flex;
     flex-direction: column;

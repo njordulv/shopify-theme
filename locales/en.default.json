@@ -5,6 +5,9 @@
     "back": "Back to home"
   },
   "blog": {
+    "by": "by",
+    "more": "Read More",
+    "no_articles": "No articles yet.",
     "article_comments": "Comments",
     "article_metadata_html": "{{ date }} by {{ author }}",
     "comment_form_body": "Comment",
@@ -38,7 +41,8 @@
     }
   },
   "collections": {
-    "title": "Collections"
+    "title": "Collections",
+    "no_products": "No products found in this collection."
   },
   "gift_card": {
     "add_to_apple_wallet": "Add to Apple Wallet",
