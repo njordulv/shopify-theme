@@ -14,7 +14,6 @@ if (productDataElement) {
   }
 }
 
+// Initialize Alpine
 window.Alpine = Alpine
 Alpine.start()
-
-console.log('Alpine.js loaded')
