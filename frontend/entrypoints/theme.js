@@ -1,5 +1,6 @@
 import 'vite/modulepreload-polyfill'
 import { initProductVariants } from '@/scripts/product-variants'
+import Alpine from 'alpinejs'
 
 // Get the product data from Liquid
 const productDataElement = document.getElementById('product-data-json')
@@ -12,3 +13,8 @@ if (productDataElement) {
     console.error('Error parsing product data:', error)
   }
 }
+
+window.Alpine = Alpine
+Alpine.start()
+
+console.log('Alpine.js loaded')

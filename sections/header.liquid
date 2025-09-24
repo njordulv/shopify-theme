@@ -19,22 +19,23 @@
       {% endif %}
     </a>
   </div>
-
   <ul class="header__menu">
     {% for link in section.settings.menu.links %}
       <li>{{ link.title | link_to: link.url }}</li>
     {% endfor %}
   </ul>
-
-  <div class="header__icons">
-    <a href="{{ routes.cart_url }}">
-      {% if cart.item_count > 0 %}
-        <sup>{{ cart.item_count }}</sup>
-      {% endif %}
-
-      {{ 'icon-cart.svg' | inline_asset_content }}
-    </a>
+  <div class="header__info">
+    {% include 'mobile-menu' %}
+    <div class="header__icons">
+      <a href="{{ routes.cart_url }}">
+        {% if cart.item_count > 0 %}
+          <sup>{{ cart.item_count }}</sup>
+        {% endif %}
+        {{ 'icon-cart.svg' | inline_asset_content }}
+      </a>
+    </div>
   </div>
+</div>
 </div>
 
 {% schema %}
