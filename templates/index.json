@@ -138,6 +138,58 @@
         "blog": "news",
         "articles_count": 3
       }
+    },
+    "faq_MyxxaU": {
+      "type": "faq",
+      "blocks": {
+        "faq_WgWfiA": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I return a product if it doesn’t fit my needs?",
+            "answer": "Yes, you can return any product within 14 days of receiving it, as long as it hasn’t been used and is in its original packaging. To start a return, please contact our support team."
+          }
+        },
+        "faq_33PF7E": {
+          "type": "faq",
+          "settings": {
+            "question": "How quickly do you process orders?",
+            "answer": "We process all orders within 24 hours after they are placed. Once your order has been shipped, you’ll receive a confirmation email with a tracking number."
+          }
+        },
+        "faq_FkTPkA": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you provide warranty on products?",
+            "answer": "All products come with an official manufacturer’s warranty. The warranty period depends on the item and is specified in the product description."
+          }
+        },
+        "faq_Qnyrcw": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you ship nationwide?",
+            "answer": "Yes, we ship orders across the entire country. In major cities, express delivery is available. For other regions, delivery usually takes 2–5 business days."
+          }
+        },
+        "faq_gkiGGT": {
+          "type": "faq",
+          "settings": {
+            "question": "What payment methods are available?",
+            "answer": "We accept credit/debit cards, PayPal, and cash on delivery. All online payments are secured and processed through trusted payment providers."
+          }
+        }
+      },
+      "block_order": [
+        "faq_WgWfiA",
+        "faq_33PF7E",
+        "faq_FkTPkA",
+        "faq_Qnyrcw",
+        "faq_gkiGGT"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "title": "FAQ",
+        "subtitle": "Find answers to common questions about our shop."
+      }
     }
   },
   "order": [
@@ -145,6 +197,7 @@
     "highlights_KBick9",
     "featured_collection_P39NQi",
     "testimonials_bYzpUi",
-    "blog_articles_rGXpeR"
+    "blog_articles_rGXpeR",
+    "faq_MyxxaU"
   ]
 }

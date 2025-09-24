@@ -75,6 +75,7 @@ Dynamic cart icon with item count.
     highlights.liquid
     testimonials.liquid
     blog.liquid
+    faq.liquid
     header.liquid
     footer.liquid
     ...
