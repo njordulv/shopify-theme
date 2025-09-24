@@ -41,12 +41,13 @@ Dynamic cart icon with item count.
 
 ## Tech Stack
 
-- Shopify Liquid – template engine
-- Theme Schema JSON – settings and customization
-- Shopify Locales JSON – i18n / translations
-- Vite – build system
-- vite-plugin-shopify & vite-plugin-shopify-clean – Shopify integration
-- SCSS / CSS – extendable theme styling
+- **Shopify Liquid** – template engine
+- **Theme Schema JSON** – settings and customization
+- **Shopify Locales JSON** – i18n / translations
+- **Vite** – build system
+- **vite-plugin-shopify & vite-plugin-shopify-clean** – Shopify integration
+- **SCSS / CSS** – extendable theme styling
+- **Alpine.js – lightweight JavaScript framework for interactivity**
 
 ## Project Structure
 
