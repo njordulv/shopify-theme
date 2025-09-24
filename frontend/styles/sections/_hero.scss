@@ -4,7 +4,12 @@
   grid-template-columns: var(--content-grid);
   background-color: var(--color-muted);
   padding: 72px 0;
-  /* height: calc(100svh - 4rem); */
+  margin-top: -3rem;
+  height: calc(100svh - 4rem);
+
+  @media (max-width: 991px) {
+    margin-top: -2rem;
+  }
 
   &__content {
     position: relative;
