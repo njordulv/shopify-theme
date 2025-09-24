@@ -7,10 +7,11 @@
   },
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite build --watch",
     "build": "vite build",
     "shopify:dev": "shopify theme dev --theme=$SHOPIFY_THEME_ID",
     "shopify:push": "shopify theme push --theme=$SHOPIFY_THEME_ID",
-    "deploy": "npm run build && npm run shopify:push"
+    "deploy": "npm run build && npm run shopify:push",
+    "dev:full": "npm-run-all --parallel dev shopify:dev"
   }
 }
