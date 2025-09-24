@@ -1,0 +1,20 @@
+{% if src != blank %}
+    <img
+      class="{{ class | default: '' }}"
+      src="{{ src | image_url: width: width, height: height }}"
+      alt="{{ alt | escape }}"
+      width="{{ width }}"
+      height="{{ height }}"
+      loading="lazy"
+      onerror="this.onerror=null;this.src='{{ fallback | asset_url }}';"
+    >
+    {% elsif fallback %}
+    <img
+      class="{{ class | default: '' }}"
+      src="{{ fallback | asset_url }}"
+      alt="{{ alt | escape }}"
+      width="{{ width }}"
+      height="{{ height }}"
+      loading="lazy"
+    >
+  {% endif %}

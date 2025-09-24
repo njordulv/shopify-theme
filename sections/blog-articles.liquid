@@ -1,70 +1,58 @@
 <div class="blog-section">
-    <h2>
-        {{ section.settings.title }}
-    </h2>
-    {% if articles.size == 0 %}
-        <p>{{ 'blog.no_articles' | t }}</p>
-    {% endif %}
+  <h2>{{ section.settings.title }}</h2>
+
+  {% assign blog_handle = section.settings.blog %}
+  {% assign articles = blogs[blog_handle].articles | slice: 0, section.settings.articles_count %}
+
+  {% if articles.size == 0 %}
+    <p>
+      {{ 'blog.no_articles' | t }}
+    </p>
+  {% else %}
     <div class="blog-section__articles">
-        {% assign blog_handle = section.settings.blog %}
-        {% assign articles = blogs[blog_handle].articles | slice: 0, section.settings.articles_count %}
-    
-    {% for article in articles %}
-      <div class="blog-section__article rounded-xl">
-        {% if article.image %}
-          <a 
-            href="{{ article.url }}" 
-            class="blog-section__image"
-          >
-            <img 
-                class="blog-section__image" 
-                src="{{ article.image | image_url: width: 412 }}"
-                width="412"
-                height="275"
-                alt="{{ article.title }}"
-                loading="lazy">
-          </a>
-        {% else %}
-          <img
-            class="blog-section__image"
-            src="{{ 'placeholder-412.svg' | asset_url }}"
-            width="412"
-            height="275"
-            alt="Placeholder"
-            loading="lazy"
-          >
-        {% endif %}
-        <div class="blog-section__content">
-          <div class="blog-section__header">
-            <h3>
-              <a 
-                href="{{ article.url }}" 
-                class="blog-section__title"
-              >
-                {{ article.title }}
-              </a>
-            </h3>
-            <div class="blog-section__meta">
-              <span class="blog-section__date">
-                {{ article.updated_at | date: '%D' }}
-              </span> |
-              <span class="blog-section__author">
-                {{ 'blog.by' | t }} {{ article.author }}
-              </span>
+      {% for article in articles %}
+        <div class="blog-section__article rounded-xl">
+          {% if article.image %}
+            <a href="{{ article.url }}" class="blog-section__image">
+              {% render 'image',
+                class: "blog-section__image",
+                src: article.image,
+                alt: article.title,
+                width: 412,
+                height: 275,
+                fallback: 'placeholder-412.svg'
+              %}
+            </a>
+          {% endif %}
+          <div class="blog-section__content">
+            <div class="blog-section__header">
+              <h3>
+                <a href="{{ article.url }}" class="blog-section__title">
+                  {{ article.title }}
+                </a>
+              </h3>
+              <div class="blog-section__meta">
+                <span class="blog-section__date">
+                  {{ article.published_at | date: '%D' }}
+                </span> |
+                <span class="blog-section__author">
+                  {{ 'blog.by' | t }} {{ article.author }}
+                </span>
+              </div>
+              <p>
+                {{ article.excerpt | strip_html | truncate: 112 }}
+              </p>
             </div>
-            <p>
-              {{ article.excerpt | strip_html | truncate: 112 }}
-            </p>
+            {% render 'button',
+              href: article.url,
+              label: 'blog.more' | t,
+              variant: 'secondary'
+            %}
           </div>
-          {% render 'button', 
-            href: article.url, 
-            label: 'blog.more' | t
-            variant: 'secondary'
-          %}
         </div>
-      </div>
-    {% endfor %}
-  </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 </div>
 
 {% schema %}

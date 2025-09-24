@@ -1,26 +1,14 @@
 <div class="product-card">
-    {% if product.featured_image %}
-        <a href="{{ product.url }}">
-            <img 
-                class="product-card__image rounded-lg"
-                src="{{ product.featured_image | image_url: width: 256, height: 256 }}" 
-                alt="{{ product.featured_image.alt }}"
-                width="256"
-                height="256"
-                loading="lazy"
-                onerror="this.onerror=null;this.src='{{ 'placeholder-256.svg' | asset_url }}';"
-            />
-        </a>
-    {% else %}
-        <img
-            class="product-card__image rounded-lg"
-            src="{{ 'placeholder-256.svg' | asset_url }}"
-            alt="Placeholder"
-            width="256"
-            height="256"
-            loading="lazy"
-        />
-    {% endif %}
+    <a href="{{ product.url }}">
+        {% render 'image',
+            class: "blog-section__image rounded-lg",
+            src: product.featured_image,
+            alt: product.title,
+            width: 256,
+            height: 256,
+            fallback: 'placeholder-256.svg'
+        %}
+    </a>
     <h3 class="product-card__title">
         {{ product.title }}
     </h3>
