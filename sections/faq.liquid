@@ -35,6 +35,7 @@
           class="faq__answer"
           x-show="expanded === {{ idx }}"
           x-collapse
+          x-cloak
           role="region"
           :aria-labelledby="'faq-trigger-{{ section.id }}-{{ block.id }}'"
         >

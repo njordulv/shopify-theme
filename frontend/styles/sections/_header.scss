@@ -1,5 +1,10 @@
 header {
   background-color: var(--color-primary-foreground);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 
 .header {
@@ -77,19 +82,12 @@ header {
     }
 
     &-list {
-      position: absolute;
-      right: -3rem;
-      top: 3rem;
       list-style: none;
-      min-width: 14rem;
-      border-radius: var(--radius);
       display: flex;
       flex-direction: column;
       gap: 0.2rem;
-      z-index: 10;
-      padding: 1rem;
-      background-color: var(--color-primary-foreground);
-      border: 1px solid var(--color-border);
+      padding: 0 1rem 2rem;
+      transition: all 0.3s ease;
 
       a {
         padding: 0.2rem 0.7rem;
@@ -99,6 +97,7 @@ header {
         color: var(--color-secondary-foreground);
         border-radius: calc(var(--radius) + 3px);
         transition: all 0.3s ease;
+        text-decoration: none;
 
         &:hover {
           color: var(--color-secondary);
@@ -116,6 +115,20 @@ header {
       svg {
         color: var(--color-secondary-foreground);
       }
+    }
+  }
+
+  &__mobile-menu-backdrop {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    background-color: var(--color-primary-foreground);
+    transition: height 0.225s ease;
+    z-index: 10;
+
+    @media (min-width: 991px) {
+      display: none;
     }
   }
 

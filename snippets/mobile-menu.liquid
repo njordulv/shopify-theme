@@ -28,20 +28,28 @@
       >
           {{ 'icon-menu.svg' | inline_asset_content }}
       </button>
-      <ul
+      <template x-teleport="header">
+        <div 
+          class="header__mobile-menu-backdrop"
           x-ref="panel"
           x-show="open"
-          x-transition.origin.top.left
+          x-collapse.origin.top.left
           x-on:click.outside="close($refs.button)"
           x-cloak
-          role="menu"
-          class="header__mobile-menu-list shadow"
-      >
-      {% for link in section.settings.menu.links %}
-        <li>
-          {{ link.title | link_to: link.url }}
-        </li>
-      {% endfor %}
-      </ul>
+        >
+          <ul
+            x-show="open"
+            x-transition.duration.600ms
+            role="menu"
+            class="header__mobile-menu-list"
+          >
+          {% for link in section.settings.menu.links %}
+            <li>
+              {{ link.title | link_to: link.url }}
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+      </template>
   </div>
 </div>

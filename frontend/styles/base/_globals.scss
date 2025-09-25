@@ -91,10 +91,10 @@ dialog {
   flex-direction: column;
   gap: 3rem;
   flex: 1 0 0;
-  padding: 3rem 0;
+  padding: 7rem 0 3rem;
 
   @media (max-width: 991px) {
-    padding: 2rem 0;
+    padding: 5rem 0 2rem;
     gap: 2rem;
   }
 }
@@ -131,4 +131,8 @@ dialog {
 
 .my-2 + p {
   margin-top: 1rem;
+}
+
+[x-cloak] {
+  display: none !important;
 }

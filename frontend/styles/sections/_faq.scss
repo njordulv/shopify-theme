@@ -22,14 +22,13 @@
     margin: 0;
     font-size: 0.875rem;
     font-weight: normal;
-    padding: 0.5rem 0 0.3rem;
   }
 
   &__trigger {
     width: 100%;
     text-align: left;
     background: none;
-    padding: 0;
+    padding: 0.5rem 0 0.3rem;
     border: 0;
     display: flex;
     justify-content: space-between;
@@ -38,7 +37,7 @@
   }
 
   &__icon {
-    transition: transform 0.225s ease;
+    transition: transform 0.3s ease;
   }
 
   &__icon--open {
@@ -51,8 +50,4 @@
     color: var(--color-muted-foreground);
     transition: all 0.3s ease;
   }
-}
-
-[x-cloak] {
-  display: none !important;
 }
