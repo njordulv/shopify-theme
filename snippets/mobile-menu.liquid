@@ -18,38 +18,36 @@
     x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
     class="header__mobile-menu-wrapper"
   >
-      <button
-          x-ref="button"
-          x-on:click="toggle()"
-          :aria-expanded="open"
-          :aria-controls="$id('dropdown-button')"
-          type="button"
-          class="header__mobile-menu-button"
+  <button x-ref="button" x-on:click="toggle()" :aria-expanded="open" :aria-controls="$id('dropdown-button')" type="button" class="header__mobile-menu-button">
+    <span x-show="!open">
+      {{ 'icon-menu.svg' | inline_asset_content }}
+    </span> 
+    <span x-show="open" x-cloak>
+      {{ 'icon-close.svg' | inline_asset_content }}
+    </span>
+  </button>
+  <template x-teleport="header">
+    <div 
+      class="header__mobile-menu-backdrop shadow"
+      x-ref="panel"
+      x-show="open"
+      x-collapse.origin.top.left
+      x-on:click.outside="close($refs.button)"
+      x-cloak
+    >
+      <ul
+        x-show="open"
+        x-transition.duration.600ms
+        role="menu"
+        class="header__mobile-menu-list"
       >
-          {{ 'icon-menu.svg' | inline_asset_content }}
-      </button>
-      <template x-teleport="header">
-        <div 
-          class="header__mobile-menu-backdrop"
-          x-ref="panel"
-          x-show="open"
-          x-collapse.origin.top.left
-          x-on:click.outside="close($refs.button)"
-          x-cloak
-        >
-          <ul
-            x-show="open"
-            x-transition.duration.600ms
-            role="menu"
-            class="header__mobile-menu-list"
-          >
-          {% for link in section.settings.menu.links %}
-            <li>
-              {{ link.title | link_to: link.url }}
-            </li>
-          {% endfor %}
-          </ul>
-        </div>
-      </template>
+      {% for link in section.settings.menu.links %}
+        <li>
+          {{ link.title | link_to: link.url }}
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </template>
   </div>
 </div>
